@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  HeadlineView.swift
 //  CoffeeBeanShop
 //
-//  Created by Данил Дьяченко on 04.07.2025.
+//  Created by Данил Дьяченко on 05.07.2025.
 //
 
 import SwiftUI
 
-struct HomeScreen: View {
+struct HeadlineView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 8) {
@@ -32,5 +32,5 @@ struct HomeScreen: View {
 }
 
 #Preview {
-    HomeScreen()
+    HeadlineView()
 }
