@@ -7,18 +7,30 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeScreen: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        HStack {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Good Morning,")
+                    .fontWeight(.regular)
+                    .font(.system(size: 12))
+                Text("Leslie Alexander")
+                    .fontWeight(.semibold)
+                    .font(.system(size: 20))
+            }
+            
+            Spacer()
+            
+            HStack(spacing: 16) {
+                Image(systemName: "bag")
+                Image(systemName: "message.badge")
+            }
         }
-        .padding()
+        .padding(.top, 24.0)
+        .padding(.horizontal, 24.0)
     }
 }
 
 #Preview {
-    ContentView()
+    HomeScreen()
 }
