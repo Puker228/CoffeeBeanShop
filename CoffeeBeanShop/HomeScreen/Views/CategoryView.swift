@@ -11,7 +11,7 @@ struct CategoryView: View {
     @State private var selectedFilter: CoffeeFilter = .all
     
     var body: some View {
-        ScrollView {
+        ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack(spacing: 16) {
                 ForEach(CoffeeFilter.allCases) { coffeeType in
                     Button(action: {
@@ -39,6 +39,8 @@ struct CategoryView: View {
                 }
             }
         }
+        .frame(height: 33)
+        .padding(.horizontal, 24.0)
     }
 }
 

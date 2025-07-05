@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeScreen: View {
     var body: some View {
-        VStack() {
+        VStack {
             HeadlineView()
                 .padding(.bottom, 24.0)
             
@@ -17,7 +17,8 @@ struct HomeScreen: View {
                 .padding(.bottom, 32.0)
             
             CategoryView()
-                .padding(.bottom, 16.0)
+            
+            Spacer()
         }
     }
 }
