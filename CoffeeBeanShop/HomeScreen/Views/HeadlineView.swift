@@ -12,11 +12,10 @@ struct HeadlineView: View {
         HStack {
             VStack(alignment: .leading, spacing: 8) {
                 Text("Good Morning,")
-                    .fontWeight(.regular)
-                    .font(.system(size: 12))
+                    .customFont(InterFont.regular, size: 12)
+                    .foregroundStyle(.gray)
                 Text("Leslie Alexander")
-                    .fontWeight(.semibold)
-                    .font(.system(size: 20))
+                    .customFont(PlusJakartaSans.regularSemiBold, size: 20)
             }
             
             Spacer()

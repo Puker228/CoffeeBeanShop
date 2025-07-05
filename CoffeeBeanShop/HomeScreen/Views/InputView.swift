@@ -16,6 +16,7 @@ struct InputView: View {
                 .foregroundStyle(.gray)
             
             TextField("Search Product", text: $inputText)
+                .customFont(PlusJakartaSans.regular, size: 14)
             
             Button(action: {
                 print(228)

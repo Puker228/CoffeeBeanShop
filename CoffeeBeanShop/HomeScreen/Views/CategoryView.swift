@@ -15,16 +15,15 @@ struct CategoryView: View {
             HStack {
                 ForEach(CoffeeFilter.allCases) { coffeeType in
                     Button(action: {
-                        print(228)
+                        selectedFilter = coffeeType
                     }) {
                         Text(coffeeType.rawValue)
-                            .font(.system(size: 14))
+                            .customFont(selectedFilter == coffeeType ? PlusJakartaSans.regularSemiBold : PlusJakartaSans.regular, size: 14)
                             .lineLimit(1)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(Color.white)
+                            .foregroundStyle(selectedFilter == coffeeType ? .white : .primary)
                             .padding(16)
                             .frame(width: 98, height: 33)
-                            .background(.green)
+                            .background(selectedFilter == coffeeType ? Color.green : Color.gray.opacity(0.2))
                             .cornerRadius(32)
                     }
                 }
