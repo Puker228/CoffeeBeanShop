@@ -12,7 +12,7 @@ struct CategoryView: View {
     
     var body: some View {
         ScrollView {
-            HStack {
+            LazyHStack(spacing: 16) {
                 ForEach(CoffeeFilter.allCases) { coffeeType in
                     Button(action: {
                         selectedFilter = coffeeType
@@ -20,10 +20,20 @@ struct CategoryView: View {
                         Text(coffeeType.rawValue)
                             .customFont(selectedFilter == coffeeType ? PlusJakartaSans.regularSemiBold : PlusJakartaSans.regular, size: 14)
                             .lineLimit(1)
-                            .foregroundStyle(selectedFilter == coffeeType ? .white : .primary)
-                            .padding(16)
-                            .frame(width: 98, height: 33)
-                            .background(selectedFilter == coffeeType ? Color.green : Color.gray.opacity(0.2))
+                            .foregroundStyle(selectedFilter == coffeeType ? .white : .black.opacity(0.65))
+                            .padding(.horizontal, 12)
+                            .frame(height: 33)
+                            .background(
+                                ZStack {
+                                    if selectedFilter == coffeeType {
+                                        Color.green
+                                    } else {
+                                        Color.white
+                                        RoundedRectangle(cornerRadius: 32)
+                                            .stroke(Color.gray.opacity(0.3), lineWidth: 1)
+                                    }
+                                }
+                            )
                             .cornerRadius(32)
                     }
                 }
