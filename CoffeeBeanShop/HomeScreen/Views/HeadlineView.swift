@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HeadlineView: View {
     var body: some View {
-        HStack {
+        HStack(alignment: .lastTextBaseline) {
             VStack(alignment: .leading, spacing: 8) {
                 Text("Good Morning,")
                     .customFont(InterFont.regular, size: 12)
@@ -26,6 +26,7 @@ struct HeadlineView: View {
                 }) {
                     Image(systemName: "bag")
                         .foregroundStyle(.black)
+                        .alignmentGuide(.lastTextBaseline) { d in d[.bottom] }
                 }
                 
                 Button(action: {
@@ -33,6 +34,7 @@ struct HeadlineView: View {
                 }) {
                     Image(systemName: "message.badge")
                         .foregroundStyle(.black)
+                        .alignmentGuide(.lastTextBaseline) { d in d[.bottom] }
                 }
 
             }

@@ -26,7 +26,7 @@ struct CategoryView: View {
                             .background(
                                 ZStack {
                                     if selectedFilter == coffeeType {
-                                        Color.green
+                                        Color("Colors/Coffee01")
                                     } else {
                                         Color.white
                                         RoundedRectangle(cornerRadius: 32)
