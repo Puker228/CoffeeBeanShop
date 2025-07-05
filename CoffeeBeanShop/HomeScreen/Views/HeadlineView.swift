@@ -22,8 +22,20 @@ struct HeadlineView: View {
             Spacer()
             
             HStack(spacing: 16) {
-                Image(systemName: "bag")
-                Image(systemName: "message.badge")
+                Button(action: {
+                    print(228)
+                }) {
+                    Image(systemName: "bag")
+                        .foregroundStyle(.black)
+                }
+                
+                Button(action: {
+                    print(228)
+                }) {
+                    Image(systemName: "message.badge")
+                        .foregroundStyle(.black)
+                }
+
             }
         }
         .padding(.top, 24.0)
