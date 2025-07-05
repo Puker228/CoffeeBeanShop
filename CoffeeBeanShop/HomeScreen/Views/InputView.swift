@@ -33,8 +33,11 @@ struct InputView: View {
 
         }
         .padding(10)
-        .background(Color(.systemGray6))
-        .cornerRadius(10)
+        .background(Color.white)
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.gray.opacity(0.3), lineWidth: 1)
+        )
         .padding(.horizontal, 24)
     }
 }
