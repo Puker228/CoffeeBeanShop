@@ -14,6 +14,9 @@ struct HomeScreen: View {
                 .padding(.bottom, 24.0)
             
             InputView()
+                .padding(.bottom, 32.0)
+            
+            CategoryView()
         }
     }
 }
