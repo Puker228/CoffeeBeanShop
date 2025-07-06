@@ -19,6 +19,6 @@ struct CoffeeItem: Identifiable, Decodable, Hashable {
     
     private let imageName: String
     var image: Image {
-        Image(imageName)
+        Image("Coffee Images/\(imageName)")
     }
 }
