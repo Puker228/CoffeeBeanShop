@@ -8,12 +8,14 @@
 import Foundation
 import SwiftUI
 
-struct ItemCard: Identifiable {
-    let id: UUID
+struct CoffeeItem: Identifiable, Decodable, Hashable {
+    let id: Int
     let name: String
+    let description: String
     let roast: String
     let price: Double
     let originalPrice: Double?
+    let rating: Double
     
     private let imageName: String
     var image: Image {
