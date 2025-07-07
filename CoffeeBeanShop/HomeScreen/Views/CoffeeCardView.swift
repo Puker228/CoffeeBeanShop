@@ -1,38 +1,38 @@
-//
-//  CoffeeCardView.swift
-//  CoffeeBeanShop
-//
-//  Created by Данил Дьяченко on 06.07.2025.
-//
-
 import SwiftUI
 
 struct CoffeeCardView: View {
     let item: CoffeeItem
-    
+
     var body: some View {
-        VStack(spacing: 12) {
+        VStack(alignment: .leading, spacing: 12) {
+            
+            // Image
             item.image
                 .resizable()
                 .scaledToFill()
-                .frame(width: 139, height: 109)
+                .frame(width: 131, height: 109)
                 .clipped()
                 .cornerRadius(8)
-                .padding([.top, .horizontal], 12)
-            VStack(alignment: .leading, spacing: 4) {
-                Text(item.name)
-                    .foregroundColor(Color.black)
-                    .customFont(PlusJakartaSans.regularMedium, size: 14)
-                Text(item.roast)
-                    .foregroundColor(Color.gray)
-                    .customFont(InterFont.regular, size: 12)
+                .padding([.top, .leading, .trailing], 12.0)
+
+            // Name + roast + price
+            VStack(alignment: .leading, spacing: 16) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(item.name)
+                        .foregroundColor(.black)
+                        .customFont(PlusJakartaSans.regularMedium, size: 14)
+
+                    Text(item.roast)
+                        .foregroundColor(.gray)
+                        .customFont(InterFont.regular, size: 12)
+                }
+
                 PriceView(price: item.price, originalPrice: item.originalPrice)
             }
             .padding(.horizontal, 12)
-            
-            Spacer()
+            .padding(.bottom, 12)
         }
-        .frame(width: 155.0, height: 217.0)
+        .frame(width: 155, height: 217)
         .background(
             RoundedRectangle(cornerRadius: 16)
                 .fill(.white)
@@ -44,24 +44,25 @@ struct CoffeeCardView: View {
 struct PriceView: View {
     let price: Double
     let originalPrice: Double?
-    
+
     var body: some View {
         HStack(spacing: 4) {
             Text("£\(price, specifier: "%.2f")")
-                .font(.system(size: 14, weight: .semibold))
+                .customFont(InterFont.regularSemiBold, size: 14)
                 .foregroundColor(originalPrice == nil ? .black : .red)
-            
+
             if let original = originalPrice {
                 Text("/was")
-                    .font(.system(size: 12))
+                    .customFont(InterFont.regular, size: 14)
                     .foregroundColor(.gray)
-                
+
                 Text("£\(original, specifier: "%.2f")")
-                    .font(.system(size: 12))
+                    .customFont(InterFont.regular, size: 14)
                     .foregroundColor(.gray)
                     .strikethrough()
             }
         }
+        .frame(width: 131, alignment: .leading)
     }
 }
 
