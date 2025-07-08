@@ -18,6 +18,8 @@ struct HomeScreen: View {
             
             CategoryView()
             
+            CoffeeCarouselView(items: ModelData().cofees)
+            
             Spacer()
         }
     }
