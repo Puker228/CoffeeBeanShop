@@ -54,6 +54,7 @@ struct LongCoffeeCardView: View {
                 .frame(width: 90, height: 76)
                 .clipped()
                 .cornerRadius(8)
+                .padding(.leading, 12)
             
             // Name + roast + price
             VStack(alignment: .leading, spacing: 16) {
@@ -70,11 +71,13 @@ struct LongCoffeeCardView: View {
                 PriceView(price: item.price, originalPrice: item.originalPrice)
             }
             .padding(.horizontal, 12)
+            
+            Spacer()
         }
-        .frame(width: 275, height: 100)
+        .frame(height: 100)
         .background(
             RoundedRectangle(cornerRadius: 16)
-                .fill(.green)
+                .fill(.white)
                 .shadow(color: .black.opacity(0.05), radius: 10, x: 0, y: 5)
         )
     }

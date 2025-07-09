@@ -17,8 +17,12 @@ struct HomeScreen: View {
                 .padding(.bottom, 32.0)
             
             CategoryView()
+                .padding(.bottom, 16.0)
             
             CoffeeCarouselView(items: ModelData().cofees)
+                .padding(.bottom, 35.0)
+            
+            SpecialOffersView(items: ModelData().cofees)
             
             Spacer()
         }
