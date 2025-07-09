@@ -41,6 +41,45 @@ struct CoffeeCardView: View {
     }
 }
 
+struct LongCoffeeCardView: View {
+    let item: CoffeeItem
+    
+    var body: some View {
+        HStack {
+            
+            // Image
+            item.image
+                .resizable()
+                .scaledToFill()
+                .frame(width: 90, height: 76)
+                .clipped()
+                .cornerRadius(8)
+            
+            // Name + roast + price
+            VStack(alignment: .leading, spacing: 16) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(item.name)
+                        .foregroundColor(.black)
+                        .customFont(PlusJakartaSans.regularMedium, size: 14)
+
+                    Text(item.roast)
+                        .foregroundColor(.gray)
+                        .customFont(InterFont.regular, size: 12)
+                }
+
+                PriceView(price: item.price, originalPrice: item.originalPrice)
+            }
+            .padding(.horizontal, 12)
+        }
+        .frame(width: 275, height: 100)
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(.green)
+                .shadow(color: .black.opacity(0.05), radius: 10, x: 0, y: 5)
+        )
+    }
+}
+
 struct PriceView: View {
     let price: Double
     let originalPrice: Double?
@@ -67,5 +106,6 @@ struct PriceView: View {
 }
 
 #Preview {
-    CoffeeCardView(item: ModelData().cofees[1])
+//    CoffeeCardView(item: ModelData().cofees[1])
+    LongCoffeeCardView(item: ModelData().cofees[1])
 }
