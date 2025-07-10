@@ -16,9 +16,11 @@ struct SpecialOffersView: View {
                 .customFont(PlusJakartaSans.regularSemiBold, size: 16)
             
             ScrollView(showsIndicators: false) {
-                ForEach(items) { item in
-                    NavigationLink(destination: CoffeeDetailView(item: item)) {
-                        LongCoffeeCardView(item: item)
+                VStack(spacing: 16) {
+                    ForEach(items) { item in
+                        NavigationLink(destination: CoffeeDetailView(item: item)) {
+                            LongCoffeeCardView(item: item)
+                        }
                     }
                 }
             }

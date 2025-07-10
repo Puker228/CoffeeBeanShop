@@ -36,7 +36,7 @@ struct CoffeeCardView: View {
         .background(
             RoundedRectangle(cornerRadius: 16)
                 .fill(.white)
-                .shadow(color: .black.opacity(0.05), radius: 10, x: 0, y: 5)
+                .shadow(color: .black.opacity(0.05), radius: 10)
         )
     }
 }
@@ -78,7 +78,7 @@ struct LongCoffeeCardView: View {
         .background(
             RoundedRectangle(cornerRadius: 16)
                 .fill(.white)
-                .shadow(color: .black.opacity(0.05), radius: 10, x: 0, y: 5)
+                .shadow(color: .black.opacity(0.05), radius: 10)
         )
     }
 }
@@ -109,6 +109,6 @@ struct PriceView: View {
 }
 
 #Preview {
-//    CoffeeCardView(item: ModelData().cofees[1])
+    CoffeeCardView(item: ModelData().cofees[1])
     LongCoffeeCardView(item: ModelData().cofees[1])
 }
